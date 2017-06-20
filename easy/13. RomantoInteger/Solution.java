@@ -2,7 +2,7 @@
 //罗马数字转整数
 public class Solution {
     public int romanToInt(String s) {
-        HashMap <String,Integer> map=new HashMap<String,Integer>();
+        Map <String,Integer> map=new HashMap<String,Integer>();
         map.put("I",1);
         map.put("V",5);
         map.put("X",10);
@@ -13,8 +13,8 @@ public class Solution {
         int ans=0;
         for(int i=0;i<s.length();i++)
         {
-            int now=map.get(s.charAt(i));
-            int next=map.get(s.charAt(i));
+            int now=map.get(s[i]).intValue();
+            int next=map.get(s[i]).intValue();
             if(now<next)
             {
                 ans=ans-now;
@@ -26,10 +26,5 @@ public class Solution {
         }
         return ans;
     }
-    public static void main(String args[])
-    {
-        String s="DCXXI";
-        Solution ss=new Solution();
-        System.out.println(ss.romanToInt(s));
-    }
+    
 }

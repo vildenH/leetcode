@@ -1,8 +1,7 @@
-
 //罗马数字转整数
 public class Solution {
     public int romanToInt(String s) {
-        Map <Character,Integer> map=new HashMap<String,Integer>();
+        Map <Character,Integer> map=new HashMap<Character,Integer>();
         map.put('I',1);
         map.put('V',5);
         map.put('X',10);
@@ -11,10 +10,13 @@ public class Solution {
         map.put('D',500);
         map.put('M',1000);
         int ans=0;
-        for(int i=0;i<s.length();i++)
+        int length=s.length();
+        for(int i=0;i<length;i++)
         {
             int now=map.get(s.charAt(i));
-            int next=map.get(s.charAt(i));
+            int next=0;         //比较的时候注意末尾走到最后的时候没有next值
+            if(i!=length-1)
+            next=map.get(s.charAt(i+1));
             if(now<next)
             {
                 ans=ans-now;
@@ -26,5 +28,12 @@ public class Solution {
         }
         return ans;
     }
+    /*
+    public static void main(String args[])
+    {
+        Solution sol=new Solution( );
+        String s="DCCCLXXVIII";
+        System.out.println(sol.romanToInt(s));
+    }*/
     
 }

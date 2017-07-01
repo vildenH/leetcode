@@ -20,4 +20,7 @@ public class Solution {
             }
         return result.toString();
     }
+    result =result.append("");
+    return result;
+    }  
 }

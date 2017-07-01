@@ -9,26 +9,8 @@
 public class Solution {
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 
-		ListNode ListHead = null;
-		// 两链表为空的情况
-		if (l1 == null) {
-			return l2;
-		} else if (l2 == null) {
-			return l1;
-		}
-		// 设定好头结点
-		if (l1.val < l2.val) {
-			ListHead = l1;
-			l1 = l1.next;
-			ListHead.next = null;
-
-		} else {
-			ListHead = l2;
-			l2 = l2.next;
-			ListHead.next = null;
-
-		}
-		ListNode now = ListHead;
+		ListNode fake=new ListNode();
+		ListNode now=fake;
 		while (l1 != null && l2 != null) {
 			if (l1.val < l2.val) {
 				now.next = l1;
@@ -49,7 +31,7 @@ public class Solution {
 		} else {
 			now.next = l1;
 		}
-		return ListHead;
+		return fake.next;
 
 	}
 }

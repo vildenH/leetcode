@@ -1,5 +1,7 @@
 import java.util.Stack;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
+
 public class Solution {
 	public boolean isValid(String s) {
 
@@ -28,8 +30,6 @@ public class Solution {
 					if (temp2 != '[') {
 						return false;
 					}
-				} else {
-					return false;
 				}
 			}
 		}
@@ -37,5 +37,9 @@ public class Solution {
 			return true;
 		else
 			return false;
+	}
+	public static void main(String[] args) {
+		String string="{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}";
+		System.out.println(new Solution().isValid(string));
 	}
 }

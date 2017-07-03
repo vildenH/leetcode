@@ -6,6 +6,9 @@
  *     ListNode(int x) { val = x; }
  * }
  */
+
+
+//合并两个单链表。比我常用的模拟方法代码量较少一点，先用一个fake头部。后序判断方法就一样了。假头部的后一个指针返回即可。
 public class Solution {
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 

@@ -1,3 +1,8 @@
+
+
+
+//这种方法需要的比较次数较多。
+//首先将第一个字符串作为前缀串，与后续字符串依次比较，如果该前缀串不存在与后序子串中，那么前缀减一。直到前缀变为空。
 public class Solution {
 
 	public String longestCommonPrefix(String[] strs) {

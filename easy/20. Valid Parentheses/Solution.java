@@ -1,3 +1,6 @@
+
+
+//简单stack的使用。
 import java.util.Stack;
 
 import org.omg.CORBA.PUBLIC_MEMBER;
